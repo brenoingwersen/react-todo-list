@@ -26,22 +26,73 @@ body {
 	flex-direction: column;
 	width: 700px;
 	border: solid;
+	padding: 50px 50px;
 }
 
 h1 {
 	font-size: 64px;
+	text-align: right;
 }
 
 h2 {
-	font-size: 24px; 
+	font-size: 24px;
+	text-align: right;
+	margin-bottom: 10px;
+}
+
+hr {
+	/* border-color: red; */
+	margin-bottom: 30px;
+}
+
+h3 {
+	font-size: 20px;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+
+input {
+	height: 70px;
+	font-size: 20px;
+	padding-left: 20px;
+}
+
+button {
+	height: 70px;
+	font-size: 24px;
+	margin: 10px 0 30px 0;
+}
+
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
 li {
 	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100px;
+	border: solid
+}
+
+p {
+	font-size: 20px;
+	margin-left: 20px;
+}
+
+.list__icons {
+	display: flex;
+	justify-content: space-around;
+	width: 120px;
+	margin-right: 10px;
 }
 
 .list__icon-edit,
 .list__icon-delete {
 	height: 40px;
+	width: 40px;
 	cursor: pointer;
 }

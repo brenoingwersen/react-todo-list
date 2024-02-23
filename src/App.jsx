@@ -41,13 +41,10 @@ function App() {
 	return (
 		<div className={styles["container"]}>
 			<div className={styles["main-container"]}>
-				<h1>
-					The Todo List
-				</h1>
-				<h2>
-					A simple React Todo List App
-				</h2>
-				<p>New Todo</p>
+				<h1> The Todo List </h1>
+				<h2> A simple React Todo List App </h2>
+				<hr />
+				<h3>New Todo</h3>
 				<input
 					type="text"
 					placeholder="Todo Item"
@@ -58,17 +55,20 @@ function App() {
 					Add Todo
 				</button>
 
-				<p>My List</p>
+				<h3>My List</h3>
 				<ul className={styles["list"]}>
 					{todoItems.map((item, index) => {
 						return (
 							<li key={index}
-								onClick={() => handleDeleteItem(index)}>
-								<p className={styles["list__item-text"]}>
-									{item}
-								</p>
-								<EditIcon className={styles["list__icon-edit"]} />
-								<DeleteIcon className={styles["list__icon-delete"]} />
+								onClick={() => handleDeleteItem(index)}
+								className={styles["list__item"]}>
+
+								<p className={styles["list__item-text"]}>{item}</p>
+
+								<div className={styles["list__icons"]}>
+									<EditIcon className={styles["list__icon-edit"]} />
+									<DeleteIcon className={styles["list__icon-delete"]} />
+								</div>
 							</li>
 						)
 					})}
