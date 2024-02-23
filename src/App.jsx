@@ -1,6 +1,7 @@
-import './App.css';
+import styles from "./App.module.css";
 import React, { useState } from "react"
-import styles from "./index.css"
+import { ReactComponent as DeleteIcon } from "./public/delete-icon.svg"
+import { ReactComponent as EditIcon } from "./public/edit-icon.svg"
 
 
 function App() {
@@ -38,35 +39,41 @@ function App() {
 	};
 
 	return (
-		<div className={styles["main-container"]}>
-			<h1 className={styles["main-header"]}>
-				The Todo List
-			</h1>
-			<h2 className={styles["sub-header"]}>
-				A simple React Todo List App
-			</h2>
-			<p>New Todo</p>
-			<input
-				type="text"
-				placeholder="Todo Item"
-				onChange={handleTaskChange}
-				value={itemTask}
-			/>
-			<button onClick={handleAddItem}>
-				Add Todo
-			</button>
+		<div className={styles["container"]}>
+			<div className={styles["main-container"]}>
+				<h1>
+					The Todo List
+				</h1>
+				<h2>
+					A simple React Todo List App
+				</h2>
+				<p>New Todo</p>
+				<input
+					type="text"
+					placeholder="Todo Item"
+					onChange={handleTaskChange}
+					value={itemTask}
+				/>
+				<button onClick={handleAddItem}>
+					Add Todo
+				</button>
 
-			<p>My List</p>
-			<ul id="itemsList">
-				{todoItems.map((item, index) => {
-					return (
-						<li key={index}
-							onClick={() => handleDeleteItem(index)}>
-							{item}
-						</li>
-					)
-				})}
-			</ul>
+				<p>My List</p>
+				<ul className={styles["list"]}>
+					{todoItems.map((item, index) => {
+						return (
+							<li key={index}
+								onClick={() => handleDeleteItem(index)}>
+								<p className={styles["list__item-text"]}>
+									{item}
+								</p>
+								<EditIcon className={styles["list__icon-edit"]} />
+								<DeleteIcon className={styles["list__icon-delete"]} />
+							</li>
+						)
+					})}
+				</ul>
+			</div>
 		</div>
 	)
 }
