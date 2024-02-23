@@ -60,14 +60,16 @@ function App() {
 					{todoItems.map((item, index) => {
 						return (
 							<li key={index}
-								onClick={() => handleDeleteItem(index)}
 								className={styles["list__item"]}>
 
-								<p className={styles["list__item-text"]}>{item}</p>
+								<input className={styles["list__item-input"]} value={item}/>
 
 								<div className={styles["list__icons"]}>
 									<EditIcon className={styles["list__icon-edit"]} />
-									<DeleteIcon className={styles["list__icon-delete"]} />
+									<DeleteIcon
+										className={styles["list__icon-delete"]}
+										onClick={() => handleDeleteItem(index)}
+									/>
 								</div>
 							</li>
 						)
