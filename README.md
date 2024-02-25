@@ -2,6 +2,8 @@
 
 A simple Todo list using React and plain css for styling.
 
+<img src="./demo.gif" width=800px>
+
 ## Run the app
 
 Make sure you have Node.js and npm installed.
